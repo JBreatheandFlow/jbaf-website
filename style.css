@@ -521,8 +521,8 @@ p { margin: 0 0 20px; max-width: 62ch; }
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
   transition: stroke-dashoffset var(--duration-slow) var(--ease-smoke);
 }
 
