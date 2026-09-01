@@ -356,54 +356,72 @@ p { margin: 0 0 20px; max-width: 62ch; }
 }
 
 /* ================================================
-   Motion system: "breath" — slow, symmetric easing
+   Motion system: "smoke" — slow, dissolving, hazy
    used consistently for buttons, links, pages, images
    ================================================ */
 
 :root {
-  --ease-flow: cubic-bezier(0.65, 0, 0.35, 1);
-  --duration-slow: 700ms;
-  --duration-medium: 450ms;
-  --duration-fast: 250ms;
+  --ease-smoke: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-slow: 1200ms;
+  --duration-medium: 800ms;
+  --duration-fast: 400ms;
 }
 
 /* Smooth cross-page flow using the native View Transitions API.
-   Chrome/Edge get a soft cross-fade between pages; other browsers
-   just navigate normally, no JS framework required. */
+   Old page dissolves outward into haze, new page condenses into
+   focus out of it, like smoke clearing. Chrome/Edge only; other
+   browsers just navigate normally, no JS framework required. */
 @view-transition {
   navigation: auto;
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: var(--duration-slow);
-  animation-timing-function: var(--ease-flow);
+@keyframes smoke-dissolve-out {
+  from { opacity: 1; filter: blur(0); transform: scale(1); }
+  to   { opacity: 0; filter: blur(14px); transform: scale(1.04); }
 }
 
-/* Buttons breathe: a slow, soft scale + glow rather than a hard snap */
+@keyframes smoke-condense-in {
+  from { opacity: 0; filter: blur(14px); transform: scale(0.98); }
+  to   { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
+::view-transition-old(root) {
+  animation: smoke-dissolve-out var(--duration-slow) var(--ease-smoke) both;
+}
+
+::view-transition-new(root) {
+  animation: smoke-condense-in var(--duration-slow) var(--ease-smoke) both;
+}
+
+/* Buttons: a soft bloom, like a puff releasing outward on hover,
+   and a gentle blur-settle rather than a hard snap */
 .btn {
   transition:
-    background-color var(--duration-medium) var(--ease-flow),
-    color var(--duration-medium) var(--ease-flow),
-    transform var(--duration-slow) var(--ease-flow),
-    box-shadow var(--duration-slow) var(--ease-flow);
+    background-color var(--duration-medium) var(--ease-smoke),
+    color var(--duration-medium) var(--ease-smoke),
+    transform var(--duration-slow) var(--ease-smoke),
+    box-shadow var(--duration-slow) var(--ease-smoke),
+    filter var(--duration-medium) var(--ease-smoke);
+  filter: blur(0);
 }
 
 .btn:hover {
-  transform: scale(1.035);
-  box-shadow: 0 8px 24px -8px rgba(93, 132, 145, 0.45);
+  transform: scale(1.04);
+  box-shadow: 0 24px 60px -12px rgba(93, 132, 145, 0.5);
 }
 
 .btn:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
+  filter: blur(0.3px);
   transition-duration: var(--duration-fast);
 }
 
 .btn-secondary:hover {
-  box-shadow: 0 8px 24px -8px rgba(163, 111, 53, 0.4);
+  box-shadow: 0 24px 60px -12px rgba(163, 111, 53, 0.45);
 }
 
-/* Links: an underline that flows in like a slow exhale */
+/* Links: an underline that drifts in slowly, like it's condensing
+   out of haze rather than being drawn */
 .main-nav a,
 .footer-nav a,
 .logo {
@@ -419,32 +437,40 @@ p { margin: 0 0 20px; max-width: 62ch; }
   width: 0%;
   height: 1px;
   background: currentColor;
-  transition: width var(--duration-slow) var(--ease-flow);
+  filter: blur(0.4px);
+  opacity: 0;
+  transition:
+    width var(--duration-slow) var(--ease-smoke),
+    opacity var(--duration-medium) var(--ease-smoke);
 }
 
 .main-nav a:hover::after,
 .footer-nav a:hover::after {
   width: 100%;
+  opacity: 0.9;
 }
 
 .main-nav a.nav-cta::after { display: none; }
 
 .main-nav a, .footer-nav a {
-  transition: color var(--duration-medium) var(--ease-flow), opacity var(--duration-medium) var(--ease-flow);
+  transition: color var(--duration-medium) var(--ease-smoke), opacity var(--duration-medium) var(--ease-smoke);
 }
 
-/* Images: a soft breath-in reveal as they enter view.
-   Starts slightly below and dim, settles into place, once, no repeat. */
+/* Images: resolve out of a haze as they enter view, blur clearing
+   to sharp alongside a slow settle, once, no repeat */
 .split-media {
   opacity: 0;
-  transform: translateY(18px) scale(0.98);
+  filter: blur(18px);
+  transform: translateY(22px) scale(0.97);
   transition:
-    opacity var(--duration-slow) var(--ease-flow),
-    transform var(--duration-slow) var(--ease-flow);
+    opacity var(--duration-slow) var(--ease-smoke),
+    filter var(--duration-slow) var(--ease-smoke),
+    transform var(--duration-slow) var(--ease-smoke);
 }
 
 .split-media.in-view {
   opacity: 1;
+  filter: blur(0);
   transform: translateY(0) scale(1);
 }
 
@@ -454,6 +480,7 @@ p { margin: 0 0 20px; max-width: 62ch; }
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
-  .split-media { opacity: 1; transform: none; }
+  .split-media { opacity: 1; filter: none; transform: none; }
+  .btn { filter: none; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
 }
