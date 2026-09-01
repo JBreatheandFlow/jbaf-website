@@ -484,3 +484,80 @@ p { margin: 0 0 20px; max-width: 62ch; }
   .btn { filter: none; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
 }
+
+/* ================================================
+   Hand-drawn annotations — circles, underlines, arrows
+   Caveat handwriting accent + existing brand ink colors
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap');
+
+.handwritten {
+  font-family: 'Caveat', cursive;
+  color: var(--clay);
+  line-height: 1;
+}
+
+.annotate {
+  position: relative;
+  display: inline-block;
+}
+
+.annotate svg {
+  position: absolute;
+  overflow: visible;
+  pointer-events: none;
+  filter: blur(0);
+  transition: filter var(--duration-slow) var(--ease-smoke);
+}
+
+.annotate:not(.in-view) svg {
+  filter: blur(3px);
+}
+
+.annotate svg path {
+  fill: none;
+  stroke: var(--clay);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  transition: stroke-dashoffset var(--duration-slow) var(--ease-smoke);
+}
+
+.annotate.in-view svg path {
+  stroke-dashoffset: 0;
+}
+
+.annotate-underline svg {
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 18px;
+}
+
+.annotate-circle {
+  padding: 0 6px;
+}
+
+.annotate-circle svg {
+  left: -8%;
+  top: -22%;
+  width: 116%;
+  height: 148%;
+}
+
+.annotate-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.annotate-arrow svg {
+  position: static;
+  flex-shrink: 0;
+  transition: filter var(--duration-slow) var(--ease-smoke);
+}
+
+.annotate-arrow:not(.in-view) svg { filter: blur(3px); }
