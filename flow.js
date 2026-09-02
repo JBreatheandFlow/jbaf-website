@@ -1,10 +1,10 @@
 // Jess Breathe & Flow — reveal on scroll.
-// Images resolve out of a haze; hand-drawn annotations sketch themselves
-// in. Each happens once, no repeat. No framework, no dependency, respects
-// prefers-reduced-motion via CSS.
+// Images, cards, and grid items resolve out of a haze; hand-drawn
+// annotations sketch themselves in. Each happens once, no repeat.
+// No framework, no dependency, respects prefers-reduced-motion via CSS.
 
 (function () {
-  var targets = document.querySelectorAll('.split-media, .annotate');
+  var targets = document.querySelectorAll('.split-media, .annotate, .reveal');
   if (!('IntersectionObserver' in window) || !targets.length) {
     targets.forEach(function (el) { el.classList.add('in-view'); });
     return;
