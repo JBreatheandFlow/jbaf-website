@@ -895,3 +895,42 @@ p { margin: 0 0 20px; max-width: 62ch; }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
 }
+
+/* ---------- Generic reveal (extends the smoke treatment to any element) ---------- */
+.reveal {
+  opacity: 0;
+  filter: blur(14px);
+  transform: translateY(18px);
+  transition:
+    opacity var(--duration-slow) var(--ease-smoke),
+    filter var(--duration-slow) var(--ease-smoke),
+    transform var(--duration-slow) var(--ease-smoke);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Staggered "breathing" cascade for grids, each item settles a beat after the last */
+.problem-grid .reveal:nth-child(1) { transition-delay: 0ms; }
+.problem-grid .reveal:nth-child(2) { transition-delay: 140ms; }
+.problem-grid .reveal:nth-child(3) { transition-delay: 280ms; }
+
+.col-grid-4 .reveal:nth-child(1) { transition-delay: 0ms; }
+.col-grid-4 .reveal:nth-child(2) { transition-delay: 110ms; }
+.col-grid-4 .reveal:nth-child(3) { transition-delay: 220ms; }
+.col-grid-4 .reveal:nth-child(4) { transition-delay: 330ms; }
+
+.testimonial-grid .reveal:nth-child(1) { transition-delay: 0ms; }
+.testimonial-grid .reveal:nth-child(2) { transition-delay: 140ms; }
+.testimonial-grid .reveal:nth-child(3) { transition-delay: 280ms; }
+
+.steps-grid .reveal:nth-child(1) { transition-delay: 0ms; }
+.steps-grid .reveal:nth-child(2) { transition-delay: 140ms; }
+.steps-grid .reveal:nth-child(3) { transition-delay: 280ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; filter: none; transform: none; transition-delay: 0ms !important; }
+}
