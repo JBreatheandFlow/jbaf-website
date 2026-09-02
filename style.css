@@ -855,3 +855,43 @@ p { margin: 0 0 20px; max-width: 62ch; }
   .hero-split-full .hero-image { min-height: 380px; }
   .hero-split-full .hero-text { padding: 56px 24px; }
 }
+
+/* ---------- Partner logo marquee ---------- */
+.marquee {
+  overflow: hidden;
+  padding: 32px 0;
+  background: var(--ivory);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+
+.marquee-track img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.75;
+  filter: grayscale(35%);
+  transition: opacity var(--duration-medium) var(--ease-smoke), filter var(--duration-medium) var(--ease-smoke);
+}
+
+.marquee-track img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
