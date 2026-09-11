@@ -1060,3 +1060,10 @@ p { margin: 0 0 20px; max-width: 62ch; }
 @media (max-width: 860px) {
   .stat-grid { grid-template-columns: 1fr; }
 }
+
+/* Full Moon tier buttons */
+.stat-card.big-number .btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
