@@ -5,15 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jess Breathe & Flow | Culturally Rooted Wellness</title>
 <meta name="description" content="Culturally rooted, trauma-informed wellness for people who are tired of holding it all together. Healing circles, sound baths, yoga, and coaching in Boston and beyond.">
+<link rel="canonical" href="https://jbreatheandflow.github.io/jbaf-website/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jess Breathe & Flow">
+<meta property="og:title" content="Jess Breathe & Flow | Culturally Rooted Wellness">
+<meta property="og:description" content="A healing space where you can finally exhale. Culturally rooted yoga, breathwork, sound healing, and healing circles in Greater Boston.">
+<meta property="og:url" content="https://jbreatheandflow.github.io/jbaf-website/">
+<meta property="og:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jess Breathe & Flow | Culturally Rooted Wellness">
+<meta name="twitter:description" content="A healing space where you can finally exhale. Culturally rooted yoga, breathwork, sound healing, and healing circles in Greater Boston.">
+<meta name="twitter:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Jess Breathe & Flow",
+  "description": "Culturally rooted yoga, breathwork, sound healing, healing circles, and restorative experiences for BIPOC communities in Greater Boston.",
+  "url": "https://jbreatheandflow.github.io/jbaf-website/",
+  "email": "info@jessbreatheandflow.com",
+  "founder": { "@type": "Person", "name": "Jessica Metayer" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Milton", "addressRegion": "MA", "addressCountry": "US" },
+  "areaServed": "Greater Boston",
+  "sameAs": [
+    "https://instagram.com/jessbreatheandflow",
+    "https://facebook.com/JessBreatheandFlow"
+  ]
+}
+</script>
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
     <a href="index.html" class="logo"><img src="images/brand/logo-horizontal.svg" alt="Jess Breathe & Flow"></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
     <nav>
-      <ul class="main-nav">
+      <ul class="main-nav" id="primary-nav">
         <li><a href="experiences.html">Experiences</a></li>
         <li><a href="organizations.html">For Organizations</a></li>
         <li><a href="community.html">Community</a></li>
@@ -38,7 +69,7 @@
     <p class="hero-tagline">Arrive as you are. No experience required.</p>
   </div>
   <div class="hero-image reveal">
-    <img src="images/hero-backbend-window.jpg" alt="Jessica in a yoga backbend, silhouetted against floor-to-ceiling windows overlooking mountains" loading="lazy">
+    <img src="images/hero-backbend-window.jpg" alt="Jessica in a yoga backbend, silhouetted against floor-to-ceiling windows overlooking mountains" fetchpriority="high" decoding="async">
   </div>
 </section>
 
