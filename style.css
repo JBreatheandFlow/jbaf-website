@@ -1124,3 +1124,67 @@ p { margin: 0 0 20px; max-width: 62ch; }
     border-radius: 2px;
   }
 }
+
+/* ---------- Movement statement ---------- */
+.movement {
+  background: var(--deep-blue);
+  text-align: center;
+}
+.movement h2 {
+  color: var(--ivory);
+  max-width: 18ch;
+  margin: 0 auto 24px;
+}
+.movement p {
+  color: var(--ivory);
+  opacity: 0.92;
+  max-width: 62ch;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ---------- Two doors ---------- */
+.doors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+.door {
+  background: var(--ivory);
+  border: 1px solid rgba(93,132,145,0.18);
+  border-radius: 4px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-medium) var(--ease-smoke),
+              box-shadow var(--duration-medium) var(--ease-smoke);
+}
+.door:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(52,81,91,0.10);
+}
+.door h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--slate);
+  margin: 0 0 12px;
+}
+.door p { margin: 0 0 20px; }
+.door ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  font-size: 0.95rem;
+  color: var(--stone);
+}
+.door ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(93,132,145,0.10);
+}
+.door ul li:last-child { border-bottom: 0; }
+.door .btn { margin-top: auto; align-self: flex-start; }
+
+@media (max-width: 860px) {
+  .doors { grid-template-columns: 1fr; }
+}
