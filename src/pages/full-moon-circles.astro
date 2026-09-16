@@ -1,45 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Full Moon Circles | Jess Breathe & Flow</title>
-<meta name="description" content="Monthly Full Moon Healing Circles with Jess Breathe and Flow, held under the full moon for release, reflection, and community connection.">
-<link rel="canonical" href="https://jbreatheandflow.github.io/jbaf-website/full-moon-circles.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Jess Breathe & Flow">
-<meta property="og:title" content="Full Moon Circles | Jess Breathe & Flow">
-<meta property="og:description" content="Monthly circles held under the full moon for release, reflection, and community connection.">
-<meta property="og:url" content="https://jbreatheandflow.github.io/jbaf-website/full-moon-circles.html">
-<meta property="og:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Full Moon Circles | Jess Breathe & Flow">
-<meta name="twitter:description" content="Monthly circles held under the full moon for release, reflection, and community connection.">
-<meta name="twitter:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a href="index.html" class="logo"><img src="images/brand/logo-horizontal.svg" alt="Jess Breathe & Flow"></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav>
-      <ul class="main-nav" id="primary-nav">
-        <li><a href="experiences.html">Experiences</a></li>
-        <li><a href="organizations.html">For Organizations</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="xhale-retreat.html">Xhale Retreat</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="full-moon-circles.html" class="nav-cta">Find Your Space</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title="Full Moon Circles | Jess Breathe & Flow"
+  description="Monthly Full Moon Healing Circles with Jess Breathe and Flow, held under the full moon for release, reflection, and community connection."
+  path="/full-moon-circles"
+  ctaText="Find Your Space"
+  ctaHref="#dates"
+>
 <section class="hero-split-full">
   <div class="hero-text">
     <h1>Full Moon Healing <span class="annotate annotate-underline">Circles<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 11 Q 50 3, 100 10 T 196 9"/></svg></span></h1>
@@ -47,7 +16,7 @@
     <p class="hero-tagline">Held once a month, sometimes twice when a blue moon calls for it.</p>
   </div>
   <div class="hero-image">
-    <img src="images/full-moon-photo.jpg" alt="Jessica smiling in an orange outfit, seated on stone steps surrounded by flowers" loading="lazy">
+    <img src={base + "/images/full-moon-photo.jpg"} alt="Jessica smiling in an orange outfit, seated on stone steps surrounded by flowers" loading="lazy">
   </div>
 </section>
 
@@ -79,7 +48,7 @@
   </div>
 </section>
 
-<section class="tint-inner-light">
+<section class="tint-inner-light" id="dates">
   <div class="wrap center mx-auto" style="max-width: 720px;">
     <p class="eyebrow">Upcoming Circles</p>
     <h2>The next four dates</h2>
@@ -127,38 +96,4 @@
     <p class="subhead mx-auto">Cost should never be the reason someone can't be in the circle. Three tiers are available: $11 sliding scale, $33 general admission, and $44 pay-it-forward, which helps cover a sliding-scale seat for someone else.</p>
   </div>
 </section>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <a href="index.html" class="logo"><img src="images/brand/logo-circle-reversed.svg" alt="Jess Breathe & Flow"></a>
-        <p class="footer-tagline">Enter as you. Emerge as yourself.</p>
-      </div>
-      <div class="footer-nav">
-        <ul>
-          <li><a href="experiences.html">Experiences</a></li>
-          <li><a href="organizations.html">For Organizations</a></li>
-          <li><a href="full-moon-circles.html">Full Moon Circles</a></li>
-          <li><a href="about.html">About Jess</a></li>
-        </ul>
-        <ul>
-          <li><a href="research-insights.html">Research & Insights</a></li>
-          <li><a href="index.html#testimonials">Testimonials</a></li>
-          <li><a href="faqs.html">FAQs</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Jess Breathe & Flow. Boston, MA.</span>
-      <div class="footer-social">
-        <a href="https://instagram.com/jessbreatheandflow" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://facebook.com/JessBreatheandFlow" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="flow.js" defer></script>
-</body>
-</html>
+</BaseLayout>
