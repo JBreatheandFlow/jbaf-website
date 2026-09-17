@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title="Coaching | Jess Breathe & Flow"
+  description="Mindfulness Coaching and Self As Instrument Coaching, 1:1 work grounded in your own embodied wisdom."
+  path="/coaching"
+  ctaText="Apply for Coaching"
+  ctaHref="#apply"
+>
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Coaching</p>
+    <h1>One-on-one work for the <span class="annotate annotate-underline">cusp of transformation<svg viewBox="0 0 260 20" preserveAspectRatio="none"><path d="M4 11 Q 65 3, 130 10 T 256 9"/></svg></span>.</h1>
+    <p class="subhead">For people who have the tools and readings behind them, but are missing the container to actually break through. Coaching starts with a short application, so we can make sure it's the right fit before we begin.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="split-media"><img src={base + "/images/coaching-mindfulness.jpg"} alt="A singing bowl, candle, journal and yoga mat arranged in warm morning light" loading="lazy"></div>
+    <div class="split-copy">
+      <p class="eyebrow">Mindfulness Coaching</p>
+      <h2>Reconnect with your body, your emotions, your intuitive wisdom</h2>
+      <p>For those ready to move from performing wholeness to actually living it. Sessions blend somatic practice with real talk, no bypassing, no forced positivity.</p>
+      <a href="#apply" class="btn btn-primary">Apply for Coaching</a>
+    </div>
+  </div>
+</section>
+
+<section class="tint-mist">
+  <div class="wrap split reverse">
+    <div class="split-copy">
+      <p class="eyebrow" style="color: var(--inner-light);">Self As Instrument Coaching</p>
+      <h2 style="color: var(--ivory);">Lead and relate from a grounded, embodied place</h2>
+      <p style="color: var(--ivory); max-width: 56ch;">For leaders and change agents who want to heal internalized systems of control, silence, or self-doubt, and show up whole in high-impact spaces.</p>
+      <a href="#apply" class="btn btn-secondary" style="border-color: var(--ivory); color: var(--ivory);">Apply for Coaching</a>
+    </div>
+    <div class="split-media"><img src={base + "/images/coaching-self-as-instrument.jpg"} alt="A woman journaling beside books on somatics, leadership, and healing systems" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="section-tight" id="apply">
+  <div class="wrap center mx-auto" style="max-width: 640px;">
+    <p class="eyebrow">Ready to apply?</p>
+    <h2>Tell us a bit about where you are</h2>
+    <p class="mx-auto">Coaching is intentionally limited to a small number of clients at a time. Applications help us make sure it's the right container for what you're carrying right now.</p>
+    <a href="mailto:info@jessbreatheandflow.com?subject=Coaching%20Application" class="btn btn-primary">Apply for Coaching</a>
+  </div>
+</section>
+</BaseLayout>

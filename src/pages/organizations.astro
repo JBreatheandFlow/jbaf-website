@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title="For Organizations | Jess Breathe & Flow"
+  description="Culturally rooted organizational wellness consulting. Real culture change, not diversity theater."
+  path="/organizations"
+  ctaText="Request a Consultation"
+  ctaHref="#consult"
+>
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">For Organizations</p>
+    <h1>Wellness programming built around your goals, <span class="annotate annotate-underline">not a template<svg viewBox="0 0 180 20" preserveAspectRatio="none"><path d="M4 11 Q 45 3, 90 10 T 176 9"/></svg></span>.</h1>
+    <p class="subhead">Trauma-informed learning, healing circles, and organizational consulting for teams and companies who want real culture change, not diversity theater.</p>
+    <div class="hero-actions">
+      <a href="#consult" class="btn btn-primary">Request a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight tint-mist">
+  <div class="wrap center">
+    <p class="eyebrow" style="color: var(--inner-light);">Trusted by teams at</p>
+    <h2 style="color: var(--ivory);">Workday &middot; International Justice Mission &middot; City of Lyon Ecological Transition Team &middot; BCon</h2>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="split-media"><img src={base + "/images/org-trauma-informed-learning.jpg"} alt="Jessica facilitating a leadership workshop circle discussion" loading="lazy"></div>
+    <div class="split-copy">
+      <p class="eyebrow">Trauma-Informed Learning</p>
+      <h2>Workshops and trainings your team will actually use</h2>
+      <p>Stress regulation, somatic wellness, nervous system education, ancestral healing, and mindful leadership, delivered by a facilitator with graduate research behind her, not a canned corporate wellness deck.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tint-ivory" style="background: var(--inner-light);">
+  <div class="wrap split reverse">
+    <div class="split-copy">
+      <p class="eyebrow">Book a Circle for Your Team</p>
+      <h2>Community Healing Circle</h2>
+      <p>A guided healing circle held for your organization, team, or group. Built for teams who want to create real psychological safety, trust, and connection, and to give employees permission to slow down, reflect, and share.</p>
+      <a href="https://cal.com/jessica-metayer-1kh8sr/community-healing-circle" class="btn btn-primary">Request This Circle</a>
+    </div>
+    <div class="split-media"><img src={base + "/images/healing-circle-group.jpg"} alt="A community healing circle, hands resting on hearts" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="tint-ivory" style="background: var(--inner-light);">
+  <div class="wrap split reverse">
+    <div class="split-copy">
+      <p class="eyebrow">Self As Instrument Workshop</p>
+      <h2>Leadership grounded in the body, not just the org chart</h2>
+      <p>For leaders navigating cross-cultural and mixed-gender contexts who are shedding outdated models of control and learning to lead with presence, care, and embodied clarity.</p>
+    </div>
+    <div class="split-media"><img src={base + "/images/org-workshop-2.jpg"} alt="A leadership workshop discussion in progress" loading="lazy"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="split-media"><img src={base + "/images/org-workshop-3.jpg"} alt="Workshop room set up for a corporate wellness session" loading="lazy"></div>
+    <div class="split-copy">
+      <p class="eyebrow">Corporate Yoga</p>
+      <h2>On-site or virtual movement for your team</h2>
+      <p>Yoga and breathwork sessions customized to your team's schedule and needs, an accessible entry point to a longer-term wellness culture.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" id="consult">
+  <div class="wrap center mx-auto" style="max-width: 640px;">
+    <p class="eyebrow">What you can count on</p>
+    <h2>How we hold this space, for organizations</h2>
+    <ul class="agreement-list" style="text-align: left; display: inline-grid;">
+      <li>Built around your goals, not a template</li>
+      <li>Team disclosures kept confidential</li>
+      <li>Jessica leads every engagement personally</li>
+      <li>Real culture change, not diversity theater</li>
+    </ul>
+    <div style="margin-top: 32px;">
+      <a href="mailto:info@jessbreatheandflow.com?subject=Consultation%20Request" class="btn btn-primary">Request a Consultation</a>
+    </div>
+  </div>
+</section>
+</BaseLayout>

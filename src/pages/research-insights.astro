@@ -1,45 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research & Insights | Jess Breathe & Flow</title>
-<meta name="description" content="The research and lived experience behind Jess Breathe and Flow and Sanctuary, why culturally rooted, community-based healing is a public health necessity.">
-<link rel="canonical" href="https://jbreatheandflow.github.io/jbaf-website/research-insights.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Jess Breathe & Flow">
-<meta property="og:title" content="Research & Insights | Jess Breathe & Flow">
-<meta property="og:description" content="The research behind culturally rooted, community-based healing as a public health necessity.">
-<meta property="og:url" content="https://jbreatheandflow.github.io/jbaf-website/research-insights.html">
-<meta property="og:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Research & Insights | Jess Breathe & Flow">
-<meta name="twitter:description" content="The research behind culturally rooted, community-based healing as a public health necessity.">
-<meta name="twitter:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a href="index.html" class="logo"><img src="images/brand/logo-horizontal.svg" alt="Jess Breathe & Flow"></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav>
-      <ul class="main-nav" id="primary-nav">
-        <li><a href="experiences.html">Experiences</a></li>
-        <li><a href="organizations.html">For Organizations</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="xhale-retreat.html">Xhale Retreat</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="experiences.html" class="nav-cta">Find Your Space</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title="Research & Insights | Jess Breathe & Flow"
+  description="The research and lived experience behind Jess Breathe and Flow and Sanctuary, why culturally rooted, community-based healing is a public health necessity."
+  path="/research-insights"
+>
 <section class="hero">
   <div class="wrap center mx-auto" style="max-width: 780px;">
     <p class="eyebrow">Research & Insights</p>
@@ -52,13 +19,13 @@
   <div class="wrap">
     <div class="stat-grid">
       <div class="stat-card">
-        <img src="images/charts/wealth-gap-boston.png" alt="Median net worth chart: $8 for Black households vs $247,500 for white households in Greater Boston">
+        <img src={base + "/images/charts/wealth-gap-boston.png"} alt="Median net worth chart: $8 for Black households vs $247,500 for white households in Greater Boston">
       </div>
       <div class="stat-card">
-        <img src="images/charts/life-expectancy-gap.png" alt="Life expectancy chart: 69 years near Nubian Square in Roxbury vs 92 years in Back Bay">
+        <img src={base + "/images/charts/life-expectancy-gap.png"} alt="Life expectancy chart: 69 years near Nubian Square in Roxbury vs 92 years in Back Bay">
       </div>
       <div class="stat-card">
-        <img src="images/charts/social-determinants.png" alt="Donut chart: only 20% of health outcomes come from clinical care, 40% from social and economic factors">
+        <img src={base + "/images/charts/social-determinants.png"} alt="Donut chart: only 20% of health outcomes come from clinical care, 40% from social and economic factors">
       </div>
       <div class="stat-card big-number">
         <p class="big-num">15 cigarettes/day</p>
@@ -101,8 +68,8 @@
     <h2>This is a moment that calls for investment, not just attention.</h2>
     <p class="subhead mx-auto">Federal support for community health equity work has been cut sharply since 2025. Local and community-rooted infrastructure is filling the gap right now. Every path below moves this work forward.</p>
     <div class="cta-row">
-      <a href="experiences.html" class="btn btn-primary">Join an Experience</a>
-      <a href="organizations.html" class="btn btn-secondary">Partner With Us</a>
+      <a href={base + "/experiences"} class="btn btn-primary">Join an Experience</a>
+      <a href={base + "/organizations"} class="btn btn-secondary">Partner With Us</a>
       <a href="mailto:info@jessbreatheandflow.com?subject=Investing%20in%20Sanctuary" class="btn btn-secondary">Invest in Sanctuary</a>
     </div>
   </div>
@@ -122,38 +89,4 @@
     </ul>
   </div>
 </section>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <a href="index.html" class="logo"><img src="images/brand/logo-circle-reversed.svg" alt="Jess Breathe & Flow"></a>
-        <p class="footer-tagline">Enter as you. Emerge as yourself.</p>
-      </div>
-      <div class="footer-nav">
-        <ul>
-          <li><a href="experiences.html">Experiences</a></li>
-          <li><a href="organizations.html">For Organizations</a></li>
-          <li><a href="full-moon-circles.html">Full Moon Circles</a></li>
-          <li><a href="about.html">About Jess</a></li>
-        </ul>
-        <ul>
-          <li><a href="research-insights.html">Research & Insights</a></li>
-          <li><a href="index.html#testimonials">Testimonials</a></li>
-          <li><a href="faqs.html">FAQs</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Jess Breathe & Flow. Boston, MA.</span>
-      <div class="footer-social">
-        <a href="https://instagram.com/jessbreatheandflow" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://facebook.com/JessBreatheandFlow" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="flow.js" defer></script>
-</body>
-</html>
+</BaseLayout>

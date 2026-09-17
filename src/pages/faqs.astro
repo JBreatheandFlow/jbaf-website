@@ -1,45 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQs | Jess Breathe & Flow</title>
-<meta name="description" content="Frequently asked questions about healing circles, yoga, booking, and the Xhale retreat with Jess Breathe and Flow.">
-<link rel="canonical" href="https://jbreatheandflow.github.io/jbaf-website/faqs.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Jess Breathe & Flow">
-<meta property="og:title" content="FAQs | Jess Breathe & Flow">
-<meta property="og:description" content="Questions answered about circles, yoga, booking, and the Xhale retreat.">
-<meta property="og:url" content="https://jbreatheandflow.github.io/jbaf-website/faqs.html">
-<meta property="og:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="FAQs | Jess Breathe & Flow">
-<meta name="twitter:description" content="Questions answered about circles, yoga, booking, and the Xhale retreat.">
-<meta name="twitter:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a href="index.html" class="logo"><img src="images/brand/logo-horizontal.svg" alt="Jess Breathe & Flow"></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav>
-      <ul class="main-nav" id="primary-nav">
-        <li><a href="experiences.html">Experiences</a></li>
-        <li><a href="organizations.html">For Organizations</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="xhale-retreat.html">Xhale Retreat</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="experiences.html" class="nav-cta">Find Your Space</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title="FAQs | Jess Breathe & Flow"
+  description="Frequently asked questions about healing circles, yoga, booking, and the Xhale retreat with Jess Breathe and Flow."
+  path="/faqs"
+>
 <section class="hero">
   <div class="wrap center mx-auto" style="max-width: 720px;">
     <p class="eyebrow">FAQs</p>
@@ -52,7 +19,7 @@
   <div class="wrap mx-auto" style="max-width: 760px;">
     <p class="eyebrow">Healing Circles</p>
     <h2 style="margin-bottom: 32px;">Full Moon Circles</h2>
-    <p style="margin-bottom: 24px;">Full Moon Circles now have their own <a href="full-moon-circles.html">dedicated page</a> with upcoming dates and booking. Community Healing Circles are currently offered exclusively for organizations and teams, see the <a href="organizations.html">For Organizations page</a>, our donation-based public circles at local libraries are coming soon.</p>
+    <p style="margin-bottom: 24px;">Full Moon Circles now have their own <a href={base + "/full-moon-circles"}>dedicated page</a> with upcoming dates and booking. Community Healing Circles are currently offered exclusively for organizations and teams, see the <a href={base + "/organizations"}>For Organizations page</a>, our donation-based public circles at local libraries are coming soon.</p>
 
     <div class="agreement-list">
       <p><strong>What should I bring?</strong><br>Please bring a journal and something to write with. You're also welcome to bring a friend, a blanket, or any personal items that help you feel grounded and comfortable.</p>
@@ -91,11 +58,11 @@
     <h2 style="margin-bottom: 32px;">How to Book</h2>
 
     <div class="agreement-list">
-      <p><strong>How do I book a class or sound bath?</strong><br>Every offering on the <a href="experiences.html">Experiences page</a> has a "Reserve Your Spot" button that takes you straight to booking, Poolside Yoga, Sound Bath, and Private, Semi-Private, or Group Yoga Sessions all book the same way. For Sound Bath specifically, sessions run 30 to 60 minutes and pricing (starting at $100+) is confirmed with Jessica after you book.</p>
-      <p><strong>How do I book a Full Moon Circle?</strong><br>Visit the <a href="full-moon-circles.html">Full Moon Circles page</a> for upcoming dates and booking.</p>
-      <p><strong>How do I book a Community Healing Circle for my organization?</strong><br>Visit the <a href="organizations.html">For Organizations page</a> and use "Request This Circle."</p>
-      <p><strong>How do I book an organizational workshop or consultation?</strong><br>Visit the <a href="organizations.html">For Organizations page</a> and use "Request a Consultation." Jessica will follow up directly to scope the engagement to your team's needs.</p>
-      <p><strong>How do I apply for coaching?</strong><br>Coaching (Mindfulness or Self As Instrument) uses a short application rather than instant booking, so Jessica can make sure it's the right fit before you begin. Apply from the <a href="coaching.html">Coaching page</a>.</p>
+      <p><strong>How do I book a class or sound bath?</strong><br>Every offering on the <a href={base + "/experiences"}>Experiences page</a> has a "Reserve Your Spot" button that takes you straight to booking, Poolside Yoga, Sound Bath, and Private, Semi-Private, or Group Yoga Sessions all book the same way. For Sound Bath specifically, sessions run 30 to 60 minutes and pricing (starting at $100+) is confirmed with Jessica after you book.</p>
+      <p><strong>How do I book a Full Moon Circle?</strong><br>Visit the <a href={base + "/full-moon-circles"}>Full Moon Circles page</a> for upcoming dates and booking.</p>
+      <p><strong>How do I book a Community Healing Circle for my organization?</strong><br>Visit the <a href={base + "/organizations"}>For Organizations page</a> and use "Request This Circle."</p>
+      <p><strong>How do I book an organizational workshop or consultation?</strong><br>Visit the <a href={base + "/organizations"}>For Organizations page</a> and use "Request a Consultation." Jessica will follow up directly to scope the engagement to your team's needs.</p>
+      <p><strong>How do I apply for coaching?</strong><br>Coaching (Mindfulness or Self As Instrument) uses a short application rather than instant booking, so Jessica can make sure it's the right fit before you begin. Apply from the <a href={base + "/coaching"}>Coaching page</a>.</p>
       <p><strong>Do I need an account to book?</strong><br>No. Booking is handled through a simple online scheduler, no account or app required.</p>
       <p><strong>Can I book for a group or private event?</strong><br>Yes. Reach out directly at <a href="mailto:info@jessbreatheandflow.com">info@jessbreatheandflow.com</a> to arrange a private circle, workshop, or group session.</p>
     </div>
@@ -116,7 +83,7 @@
     </div>
 
     <div class="center-actions" style="margin-top: 24px;">
-      <a href="xhale-retreat.html" class="btn btn-secondary" style="border-color: var(--ivory); color: var(--ivory);">Learn More About Xhale</a>
+      <a href={base + "/xhale-retreat"} class="btn btn-secondary" style="border-color: var(--ivory); color: var(--ivory);">Learn More About Xhale</a>
     </div>
   </div>
 </section>
@@ -128,38 +95,4 @@
     <a href="mailto:info@jessbreatheandflow.com" class="btn btn-primary">Email Us</a>
   </div>
 </section>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <a href="index.html" class="logo"><img src="images/brand/logo-circle-reversed.svg" alt="Jess Breathe & Flow"></a>
-        <p class="footer-tagline">Enter as you. Emerge as yourself.</p>
-      </div>
-      <div class="footer-nav">
-        <ul>
-          <li><a href="experiences.html">Experiences</a></li>
-          <li><a href="organizations.html">For Organizations</a></li>
-          <li><a href="full-moon-circles.html">Full Moon Circles</a></li>
-          <li><a href="about.html">About Jess</a></li>
-        </ul>
-        <ul>
-          <li><a href="research-insights.html">Research & Insights</a></li>
-          <li><a href="index.html#testimonials">Testimonials</a></li>
-          <li><a href="faqs.html">FAQs</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Jess Breathe & Flow. Boston, MA.</span>
-      <div class="footer-social">
-        <a href="https://instagram.com/jessbreatheandflow" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://facebook.com/JessBreatheandFlow" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="flow.js" defer></script>
-</body>
-</html>
+</BaseLayout>

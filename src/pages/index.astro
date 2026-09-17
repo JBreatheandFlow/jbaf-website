@@ -1,73 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jess Breathe & Flow | Culturally Rooted Wellness</title>
-<meta name="description" content="Culturally rooted, trauma-informed wellness for people who are tired of holding it all together. Healing circles, sound baths, yoga, and coaching in Boston and beyond.">
-<link rel="canonical" href="https://jbreatheandflow.github.io/jbaf-website/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Jess Breathe & Flow">
-<meta property="og:title" content="Jess Breathe & Flow | Culturally Rooted Wellness">
-<meta property="og:description" content="A healing space where you can finally exhale. Culturally rooted yoga, breathwork, sound healing, and healing circles in Greater Boston.">
-<meta property="og:url" content="https://jbreatheandflow.github.io/jbaf-website/">
-<meta property="og:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jess Breathe & Flow | Culturally Rooted Wellness">
-<meta name="twitter:description" content="A healing space where you can finally exhale. Culturally rooted yoga, breathwork, sound healing, and healing circles in Greater Boston.">
-<meta name="twitter:image" content="https://jbreatheandflow.github.io/jbaf-website/images/brand/logo-circle-color.svg">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
-  "name": "Jess Breathe & Flow",
-  "description": "Culturally rooted yoga, breathwork, sound healing, healing circles, and restorative experiences for BIPOC communities in Greater Boston.",
-  "url": "https://jbreatheandflow.github.io/jbaf-website/",
-  "email": "info@jessbreatheandflow.com",
-  "founder": { "@type": "Person", "name": "Jessica Metayer" },
-  "address": { "@type": "PostalAddress", "addressLocality": "Milton", "addressRegion": "MA", "addressCountry": "US" },
-  "areaServed": "Greater Boston",
-  "sameAs": [
-    "https://instagram.com/jessbreatheandflow",
-    "https://facebook.com/JessBreatheandFlow"
-  ]
-}
-</script>
-</head>
-<body>
-
-<header class="site-header">
-  <div class="wrap">
-    <a href="index.html" class="logo"><img src="images/brand/logo-horizontal.svg" alt="Jess Breathe & Flow"></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav>
-      <ul class="main-nav" id="primary-nav">
-        <li><a href="experiences.html">Experiences</a></li>
-        <li><a href="organizations.html">For Organizations</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="xhale-retreat.html">Xhale Retreat</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="experiences.html" class="nav-cta">Find Your Space</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title="Jess Breathe & Flow | Culturally Rooted Wellness"
+  description="Culturally rooted, trauma-informed wellness for people who are tired of holding it all together. Healing circles, sound baths, yoga, and coaching in Boston and beyond."
+  path="/"
+>
 <section class="hero-split-full">
   <div class="hero-text">
     <h1>A healing space where you can <span class="annotate annotate-underline">finally exhale<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 11 Q 50 3, 100 10 T 196 9"/></svg></span>.</h1>
     <p class="subhead">Culturally rooted yoga, breathwork, sound healing, healing circles, and restorative experiences for professionals, caregivers, and community leaders who are ready to feel grounded, seen, and fully at home in themselves.</p>
     <div class="hero-actions">
-      <a href="experiences.html" class="btn btn-primary">Explore Experiences</a>
+      <a href={base + "/experiences"} class="btn btn-primary">Explore Experiences</a>
     </div>
     <p class="hero-tagline">Arrive as you are. No experience required.</p>
   </div>
   <div class="hero-image reveal">
-    <img src="images/hero-backbend-window.jpg" alt="Jessica in a yoga backbend, silhouetted against floor-to-ceiling windows overlooking mountains" fetchpriority="high" decoding="async">
+    <img src={base + "/images/hero-backbend-window.jpg"} alt="Jessica in a yoga backbend, silhouetted against floor-to-ceiling windows overlooking mountains" fetchpriority="high" decoding="async">
   </div>
 </section>
 
@@ -91,7 +41,7 @@
     </div>
     <p class="pull-quote">Healing should not require you to code-switch, explain your culture, or audition for belonging.</p>
     <div class="center-actions">
-      <a href="experiences.html" class="btn btn-on-dark">Explore Experiences</a>
+      <a href={base + "/experiences"} class="btn btn-on-dark">Explore Experiences</a>
     </div>
   </div>
 </section>
@@ -133,7 +83,7 @@
       </div>
     </div>
     <div class="center-actions">
-      <a href="experiences.html" class="btn btn-secondary">Explore Experiences</a>
+      <a href={base + "/experiences"} class="btn btn-secondary">Explore Experiences</a>
     </div>
   </div>
 </section>
@@ -163,7 +113,7 @@
           <li>1:1 coaching</li>
           <li>Retreats</li>
         </ul>
-        <a href="experiences.html" class="btn btn-primary">Explore Experiences</a>
+        <a href={base + "/experiences"} class="btn btn-primary">Explore Experiences</a>
       </div>
       <div class="door reveal">
         <h3>For Your Organization</h3>
@@ -175,7 +125,7 @@
           <li>Healing circles for teams</li>
           <li>Nervous system &amp; somatic education</li>
         </ul>
-        <a href="organizations.html" class="btn btn-secondary">Work With JBAF</a>
+        <a href={base + "/organizations"} class="btn btn-secondary">Work With JBAF</a>
       </div>
     </div>
   </div>
@@ -191,9 +141,9 @@
       <h3>Rooted in community</h3>
       <p>JBAF has collaborated with the Neponset River Watershed Association, BECMA, and the City of Boston Age Strong Commission to create community-rooted wellness experiences.</p>
       <p class="credentials-line">500-Hour Advanced-Trained Yoga Teacher | Organization Development Practitioner | Trauma-Informed Practice | MS, Organizational Development, Pepperdine University</p>
-      <a href="about.html" class="btn btn-primary">Meet Jessica</a>
+      <a href={base + "/about"} class="btn btn-primary">Meet Jessica</a>
     </div>
-    <div class="split-media"><img src="images/about-founding-story.jpg" alt="Jessica smiling, seated outdoors surrounded by flowering vines" loading="lazy"></div>
+    <div class="split-media"><img src={base + "/images/about-founding-story.jpg"} alt="Jessica smiling, seated outdoors surrounded by flowering vines" loading="lazy"></div>
   </div>
 </section>
 
@@ -243,51 +193,51 @@
       </div>
     </div>
     <div class="center-actions">
-      <a href="experiences.html" class="btn btn-primary">Explore Experiences</a>
+      <a href={base + "/experiences"} class="btn btn-primary">Explore Experiences</a>
     </div>
   </div>
 </section>
 
 <div class="marquee">
   <div class="marquee-track">
-    <img src="images/logos/age-strong.png" alt="Boston Age Strong Commission">
-    <img src="images/logos/black-economic-council-ma.png" alt="Black Economic Council of Massachusetts">
-    <img src="images/logos/build-the-balance.png" alt="Build the Balance">
-    <img src="images/logos/eforall.png" alt="EforAll">
-    <img src="images/logos/embrace-boston.png" alt="Embrace Boston">
-    <img src="images/logos/huntington-theatre.png" alt="Huntington Theatre">
-    <img src="images/logos/milton-high-school.png" alt="Milton High School">
-    <img src="images/logos/milton-yoga.png" alt="Milton Yoga">
-    <img src="images/logos/mystic-river-watershed-association.png" alt="Mystic River Watershed Association">
-    <img src="images/logos/neprwa.png" alt="Neponset River Watershed Association">
-    <img src="images/logos/our-fire-collective.png" alt="Our Fire Collective">
-    <img src="images/logos/purespark.png" alt="PureSpark">
-    <img src="images/logos/serene-way-therapy.png" alt="Serene Way Therapy">
-    <img src="images/logos/lululemon.png" alt="lululemon">
-    <img src="images/logos/boston-public-library.png" alt="Boston Public Library">
-    <img src="images/logos/iloveme-reiki.png" alt="ILOVEME Reiki Restorative Energy Spa">
-    <img src="images/logos/leela-yoga-wellness.png" alt="Marlene Boyette, Leela Yoga + Wellness">
-    <img src="images/logos/golden-wellness.png" alt="Golden Wellness">
-    <img src="images/logos/flow-like-aer.png" alt="Flow Like Aer">
-    <img src="images/logos/age-strong.png" alt="" aria-hidden="true">
-    <img src="images/logos/black-economic-council-ma.png" alt="" aria-hidden="true">
-    <img src="images/logos/build-the-balance.png" alt="" aria-hidden="true">
-    <img src="images/logos/eforall.png" alt="" aria-hidden="true">
-    <img src="images/logos/embrace-boston.png" alt="" aria-hidden="true">
-    <img src="images/logos/huntington-theatre.png" alt="" aria-hidden="true">
-    <img src="images/logos/milton-high-school.png" alt="" aria-hidden="true">
-    <img src="images/logos/milton-yoga.png" alt="" aria-hidden="true">
-    <img src="images/logos/mystic-river-watershed-association.png" alt="" aria-hidden="true">
-    <img src="images/logos/neprwa.png" alt="" aria-hidden="true">
-    <img src="images/logos/our-fire-collective.png" alt="" aria-hidden="true">
-    <img src="images/logos/purespark.png" alt="" aria-hidden="true">
-    <img src="images/logos/serene-way-therapy.png" alt="" aria-hidden="true">
-    <img src="images/logos/lululemon.png" alt="" aria-hidden="true">
-    <img src="images/logos/boston-public-library.png" alt="" aria-hidden="true">
-    <img src="images/logos/iloveme-reiki.png" alt="" aria-hidden="true">
-    <img src="images/logos/leela-yoga-wellness.png" alt="" aria-hidden="true">
-    <img src="images/logos/golden-wellness.png" alt="" aria-hidden="true">
-    <img src="images/logos/flow-like-aer.png" alt="" aria-hidden="true">
+    <img src={base + "/images/logos/age-strong.png"} alt="Boston Age Strong Commission">
+    <img src={base + "/images/logos/black-economic-council-ma.png"} alt="Black Economic Council of Massachusetts">
+    <img src={base + "/images/logos/build-the-balance.png"} alt="Build the Balance">
+    <img src={base + "/images/logos/eforall.png"} alt="EforAll">
+    <img src={base + "/images/logos/embrace-boston.png"} alt="Embrace Boston">
+    <img src={base + "/images/logos/huntington-theatre.png"} alt="Huntington Theatre">
+    <img src={base + "/images/logos/milton-high-school.png"} alt="Milton High School">
+    <img src={base + "/images/logos/milton-yoga.png"} alt="Milton Yoga">
+    <img src={base + "/images/logos/mystic-river-watershed-association.png"} alt="Mystic River Watershed Association">
+    <img src={base + "/images/logos/neprwa.png"} alt="Neponset River Watershed Association">
+    <img src={base + "/images/logos/our-fire-collective.png"} alt="Our Fire Collective">
+    <img src={base + "/images/logos/purespark.png"} alt="PureSpark">
+    <img src={base + "/images/logos/serene-way-therapy.png"} alt="Serene Way Therapy">
+    <img src={base + "/images/logos/lululemon.png"} alt="lululemon">
+    <img src={base + "/images/logos/boston-public-library.png"} alt="Boston Public Library">
+    <img src={base + "/images/logos/iloveme-reiki.png"} alt="ILOVEME Reiki Restorative Energy Spa">
+    <img src={base + "/images/logos/leela-yoga-wellness.png"} alt="Marlene Boyette, Leela Yoga + Wellness">
+    <img src={base + "/images/logos/golden-wellness.png"} alt="Golden Wellness">
+    <img src={base + "/images/logos/flow-like-aer.png"} alt="Flow Like Aer">
+    <img src={base + "/images/logos/age-strong.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/black-economic-council-ma.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/build-the-balance.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/eforall.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/embrace-boston.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/huntington-theatre.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/milton-high-school.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/milton-yoga.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/mystic-river-watershed-association.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/neprwa.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/our-fire-collective.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/purespark.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/serene-way-therapy.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/lululemon.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/boston-public-library.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/iloveme-reiki.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/leela-yoga-wellness.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/golden-wellness.png"} alt="" aria-hidden="true">
+    <img src={base + "/images/logos/flow-like-aer.png"} alt="" aria-hidden="true">
   </div>
 </div>
 
@@ -298,9 +248,9 @@
       <p>It is about returning to the self beneath the roles, expectations, and weight you have learned to carry. High-responsibility environments can quietly require continual proof, perception management, emotional labor, and responsibility for others. Over time, that hidden work can consume capacity while becoming difficult to name.</p>
       <p>JBAF brings together movement, breath, sound, stillness, story, and community to create the conditions for restoration and reconnection. This is not wellness that asks you to assimilate. It is a practice of remembering that rest, joy, connection, and wholeness have always belonged to you.</p>
       <p style="font-style: italic; font-family: var(--font-display); font-size: 1.1rem;">Healing is a homecoming.<br>You do not have to make the journey alone.</p>
-      <a href="experiences.html" class="btn btn-primary">Explore Experiences</a>
+      <a href={base + "/experiences"} class="btn btn-primary">Explore Experiences</a>
     </div>
-    <div class="split-media"><img src="images/jessica-speaking.jpg" alt="Jessica speaking at a community event" loading="lazy"></div>
+    <div class="split-media"><img src={base + "/images/jessica-speaking.jpg"} alt="Jessica speaking at a community event" loading="lazy"></div>
   </div>
 </section>
 
@@ -319,38 +269,4 @@
     </div>
   </div>
 </section>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <a href="index.html" class="logo"><img src="images/brand/logo-circle-reversed.svg" alt="Jess Breathe & Flow"></a>
-        <p class="footer-tagline">Enter as you. Emerge as yourself.</p>
-      </div>
-      <div class="footer-nav">
-        <ul>
-          <li><a href="experiences.html">Experiences</a></li>
-          <li><a href="organizations.html">For Organizations</a></li>
-          <li><a href="full-moon-circles.html">Full Moon Circles</a></li>
-          <li><a href="about.html">About Jess</a></li>
-        </ul>
-        <ul>
-          <li><a href="research-insights.html">Research & Insights</a></li>
-          <li><a href="index.html#testimonials">Testimonials</a></li>
-          <li><a href="faqs.html">FAQs</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Jess Breathe & Flow. Boston, MA.</span>
-      <div class="footer-social">
-        <a href="https://instagram.com/jessbreatheandflow" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://facebook.com/JessBreatheandFlow" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="flow.js" defer></script>
-</body>
-</html>
+</BaseLayout>

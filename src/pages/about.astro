@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title="About Jess | Jess Breathe & Flow"
+  description="Jessica Metayer, founder of Jess Breathe and Flow. MSOD, 500-hour yoga training, four years facilitating circles in community."
+  path="/about"
+>
+<section class="hero">
+  <div class="wrap split" style="align-items: start;">
+    <div class="split-copy">
+      <p class="eyebrow">About Jess</p>
+      <h1>We know what it's like to enter a room and feel the need to become <span class="annotate annotate-underline">smaller<svg viewBox="0 0 170 20" preserveAspectRatio="none"><path d="M4 11 Q 42 3, 85 10 T 166 9"/></svg></span>.</h1>
+      <p class="subhead">Jessica Metayer founded Jess Breathe and Flow to create the culturally affirming spaces she needed but never found, where people of color can drop the mask, breathe deep, and be who they were always meant to be.</p>
+    </div>
+    <div class="split-media"><img src={base + "/images/about-portrait.jpg"} alt="Jessica Metayer, founder of Jess Breathe and Flow" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap split reverse">
+    <div class="split-copy">
+      <p class="eyebrow">Credentials & experience</p>
+      <ul class="agreement-list">
+        <li>MS in Organization Development, Pepperdine Graziadio</li>
+        <li>500-hour yoga teacher training</li>
+        <li>GPS (Group Peer Support) Trained Facilitator</li>
+        <li>Graduate research with 15 Black executive leaders</li>
+        <li>Consulting engagements with Workday, International Justice Mission (Washington, DC), and the City of Lyon Ecological Transition Team, where she served as lead facilitator</li>
+        <li>Four years facilitating healing circles in community</li>
+        <li>17 community and civic partners</li>
+      </ul>
+      <img src={base + "/images/gps-facilitator-badge.png"} alt="GPS Group Peer Support Trained Facilitator badge" style="width: 110px; margin-top: 20px;">
+    </div>
+    <div class="split-media"><img src={base + "/images/about-graduation.jpg"} alt="Jessica at her Pepperdine graduate school graduation" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="tint-inner-light">
+  <div class="wrap center mx-auto" style="max-width: 720px;">
+    <p class="eyebrow">Philosophy & POV</p>
+    <h2>What I believe</h2>
+    <p class="subhead mx-auto" style="text-align: left; font-size: 1.15rem;">I believe healing was never meant to be something you have to earn, translate, or perform your way into.</p>
+    <p style="text-align: left; max-width: 640px; margin: 0 auto 20px;">For a long time, the wellness industry has asked people of color to either shrink themselves to fit rooms that weren't built for them, or pay a premium for spaces that finally see them. I don't think either should be the cost of rest.</p>
+    <p style="text-align: left; max-width: 640px; margin: 0 auto 20px;">My approach blends what the research confirms with what my community has always known: that a nervous system settles fastest in the presence of people who already understand you, that breathwork is both ancient practice and measurable physiology, that healing happens in circles because that is where verification lives when institutions withhold it.</p>
+    <p style="text-align: left; max-width: 640px; margin: 0 auto;">I lead from a place that is scientifically soulful: grounded in what the body and the data both show, delivered with the warmth of people who have always known how to hold each other. I am not interested in wellness that asks you to assimilate. I am interested in the kind that asks you to come home.</p>
+  </div>
+</section>
+
+<section class="tint-mist">
+  <div class="wrap center">
+    <h2 style="color: var(--ivory);">Enter as you. Emerge as yourself.</h2>
+    <p class="mx-auto" style="color: var(--ivory);">That's the whole practice. Come find the experience that meets you where you are.</p>
+    <a href={base + "/experiences"} class="btn btn-secondary" style="border-color: var(--ivory); color: var(--ivory);">See Experiences</a>
+  </div>
+</section>
+</BaseLayout>
