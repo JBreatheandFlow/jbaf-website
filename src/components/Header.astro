@@ -17,7 +17,7 @@ const href = (p) => (p.startsWith('http') || p.startsWith('#') ? p : base + p);
         <li><a href={href('/xhale-retreat')}>Xhale Retreat</a></li>
         <li><a href={href('/coaching')}>Coaching</a></li>
         <li><a href={href('/about')}>About</a></li>
-        <li><a href={href(ctaHref)} class="nav-cta">{ctaText}</a></li>
+        <li><a href={href(ctaHref)} class="nav-cta" target={ctaHref.startsWith("http") ? "_blank" : undefined} rel={ctaHref.startsWith("http") ? "noopener" : undefined}>{ctaText}</a></li>
       </ul>
     </nav>
   </div>
