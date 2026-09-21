@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ImpactStats from '../components/ImpactStats.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const consult = 'https://cal.com/jessica-metayer-1kh8sr/organizational-consultation';
 const checklist = base + '/#checklist';
@@ -68,9 +69,10 @@ const formats = [
   <div class="wrap center">
     <p class="eyebrow" style="color: var(--inner-light);">Trusted by</p>
     <h2 style="color: var(--ivory);">Workday &middot; International Justice Mission &middot; City of Lyon &middot; City of Boston Age Strong</h2>
-    <p style="color: var(--ivory); opacity: 0.9; margin-top: 12px;">90+ corporate and community classes delivered in 2026</p>
   </div>
 </section>
+
+<ImpactStats />
 
 <section class="curved-section">
   <div class="wrap center">
@@ -159,6 +161,7 @@ const formats = [
       <h2>We know what it's like to care deeply and still watch people burn out.</h2>
       <p>We've sat in the trainings that changed nothing. Jess Breathe &amp; Flow was built to do the part those trainings skip: helping people feel safe enough to show up honestly, together.</p>
       <p>Jessica Metayer holds an MS in Organization Development from Pepperdine Graziadio Business School. Her graduate research with Black executive leaders explored the hidden labor of sustaining yourself under pressure inside organizations. She brings 5 years of facilitating healing circles, 500-hour advanced yoga training, and practice in breathwork, sound healing, and Reiki.</p>
+      <p>Her organization development work reaches across cultures: lead facilitator of an Appreciative Inquiry large-group workshop for Workday in Costa Rica, co-designer of a three-day culture change engagement for BCon's human capital team in Japan, and lead facilitator for the City of Lyon Ecological Transition Team in France.</p>
       <p class="credentials-line">MS, Organization Development, Pepperdine | Trauma-Informed Practice | 500-Hour Advanced-Trained Yoga Teacher | GPS Trained Facilitator</p>
       <p class="research-note">Jessica's research shapes how these programs are designed. It did not evaluate JBAF programs.</p>
     </div>
@@ -230,8 +233,8 @@ const formats = [
 
 <section class="tint-mist">
   <div class="wrap center">
-    <p class="eyebrow" style="color: var(--inner-light);">Case study</p>
-    <h2 style="color: var(--ivory);">Culturally relevant movement for Boston's older adults</h2>
+    <p class="eyebrow" style="color: var(--inner-light);">Case studies</p>
+    <h2 style="color: var(--ivory);">Proof from the rooms we've held</h2>
     <div class="case-study">
       <h3>City of Boston Age Strong Commission</h3>
       <p class="case-sub">In partnership with ThriveHub</p>
@@ -243,6 +246,19 @@ const formats = [
       <p>Since January 2026, Jessica has taught 27 sessions at the Veronica B. Smith Senior Center, regularly with 22 or more participants. Many return week after week, and attendance rises when participants learn she's teaching. In fall 2026, the work expanded to three new series in Copley, Holland, and Jamaica Plain.</p>
       <blockquote>"I have had trouble sleeping for a very long time. Since taking your classes, I am able to relax and sleep at night."</blockquote>
       <p style="font-size: 0.9rem;">Participant, Veronica B. Smith Senior Center</p>
+    </div>
+    <div class="case-study">
+      <h3>School Wellness Club Pilot</h3>
+      <p class="case-sub">A 10-week pilot at a Boston Public Schools elementary school, spring 2026</p>
+      <h4>The need</h4>
+      <p>Students need spaces within the school day where they can slow down, express themselves, build healthy relationships, and practice ways to respond to difficult emotions. The pilot was designed as a club, not a clinical intervention, so it felt low pressure and centered on curiosity and community.</p>
+      <h4>What we delivered</h4>
+      <p>A 10-session wellness club blending yoga, mindfulness, emotional check-ins, reflection, play, and creative choice like clay, drawing, and origami. Lessons drew on age-appropriate themes such as kindness, contentment, and self-awareness, and the club adapted to what students showed they needed.</p>
+      <h4>What happened</h4>
+      <p>Students grew closer and the club became a place they wanted to return to. Students outside the group heard about it and asked to join. On the closing survey, 3 of 3 respondents said they were happy to be in the group, learned a new activity, and believed their friends would like it.</p>
+      <blockquote>"Keep on going."</blockquote>
+      <p style="font-size: 0.9rem;">Student, closing survey</p>
+      <p class="research-note">A small pilot with 3 survey respondents, shared as early evidence. The next cycle adds pre and post measures.</p>
     </div>
   </div>
 </section>
