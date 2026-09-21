@@ -1,0 +1,29 @@
+---
+const { tone = 'light' } = Astro.props;
+---
+<section class={`impact-stats impact-${tone}`}>
+  <div class="wrap">
+    <ul class="impact-list">
+      <li><span class="impact-num">650+</span><span class="impact-label">classes, circles &amp; workshops led since 2021</span></li>
+      <li><span class="impact-num">4,400+</span><span class="impact-label">participant visits</span></li>
+      <li><span class="impact-num">90+</span><span class="impact-label">corporate &amp; community sessions in 2026</span></li>
+      <li><span class="impact-num">4</span><span class="impact-label">countries: U.S., France, Costa Rica &amp; Japan</span></li>
+    </ul>
+    <p class="impact-note">Includes classes Jessica led for partner studios and programs. A participant visit counts each time someone attends.</p>
+  </div>
+</section>
+<style>
+  .impact-stats { padding: 44px 0 36px; }
+  .impact-light { background: var(--ivory); }
+  .impact-mist { background: var(--mist); }
+  .impact-list { list-style: none; padding: 0; margin: 0 auto; max-width: 1040px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+  .impact-num { display: block; font-family: var(--font-display); font-size: 2.8rem; line-height: 1.1; color: var(--clay); }
+  .impact-label { display: block; font-size: 0.95rem; margin-top: 6px; }
+  .impact-note { font-size: 0.78rem; opacity: 0.75; text-align: center; max-width: 620px; margin: 20px auto 0; }
+  .impact-mist .impact-num { color: var(--ivory); }
+  .impact-mist .impact-label, .impact-mist .impact-note { color: var(--ivory); }
+  @media (max-width: 860px) {
+    .impact-list { grid-template-columns: 1fr 1fr; gap: 22px 16px; }
+    .impact-num { font-size: 2.3rem; }
+  }
+</style>
