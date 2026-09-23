@@ -9,13 +9,78 @@ const {
   ctaText,
   ctaHref,
   bodyClass = '',
+  image,
+  noindex = false,
+  schema,
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const siteUrl = 'https://jessbreatheandflow.com';
 const canonical = siteUrl + (path === '/' ? '/' : path);
-const ogImage = siteUrl + '/images/hero-backbend-window.jpg';
+const ogImage = siteUrl + (image || '/images/hero-backbend-window.jpg');
 const plainTitle = title.replace(/&amp;/g, '&');
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': siteUrl + '/#organization',
+      name: 'Jess Breathe & Flow',
+      alternateName: 'JBAF',
+      url: siteUrl,
+      logo: siteUrl + '/images/brand/logo-circle-color.svg',
+      image: siteUrl + '/images/hero-backbend-window.jpg',
+      email: 'info@jessbreatheandflow.com',
+      description:
+        'Healing-centered wellness for individuals, teams, schools, and community organizations. Yoga, breathwork, sound healing, and facilitated healing circles rooted in culture, dignity, and community.',
+      founder: { '@id': siteUrl + '/#jessica' },
+      areaServed: ['Greater Boston', 'United States', 'International'],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Milton',
+        addressRegion: 'MA',
+        addressCountry: 'US',
+      },
+      sameAs: [
+        'https://instagram.com/jessbreatheandflow',
+        'https://facebook.com/JessBreatheandFlow',
+      ],
+    },
+    {
+      '@type': 'Person',
+      '@id': siteUrl + '/#jessica',
+      name: 'Jessica Metayer',
+      jobTitle: 'Founder and Lead Facilitator',
+      url: siteUrl + '/about',
+      image: siteUrl + '/images/about-portrait.jpg',
+      email: 'info@jessbreatheandflow.com',
+      worksFor: { '@id': siteUrl + '/#organization' },
+      alumniOf: {
+        '@type': 'CollegeOrUniversity',
+        name: 'Pepperdine University, Graziadio Business School',
+      },
+      knowsAbout: [
+        'Organization Development',
+        'Trauma-informed facilitation',
+        'Healing circles',
+        'Breathwork',
+        'Yoga',
+        'Sound healing',
+        'Appreciative Inquiry',
+        'Group Peer Support',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': siteUrl + '/#website',
+      url: siteUrl,
+      name: 'Jess Breathe & Flow',
+      publisher: { '@id': siteUrl + '/#organization' },
+      inLanguage: 'en-US',
+    },
+  ],
+};
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +99,7 @@ const plainTitle = title.replace(/&amp;/g, '&');
 <link rel="apple-touch-icon" href="/images/brand/logo-circle-color.svg">
 <title>{title}</title>
 <meta name="description" content={description}>
+{noindex && <meta name="robots" content="noindex, follow">}
 <link rel="canonical" href={canonical}>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jess Breathe & Flow">
@@ -46,11 +112,16 @@ const plainTitle = title.replace(/&amp;/g, '&');
 <meta name="twitter:description" content={description}>
 <meta name="twitter:image" content={ogImage}>
 <link rel="stylesheet" href={base + '/style.css'}>
+<script type="application/ld+json" is:inline set:html={JSON.stringify(orgSchema)} />
+{schema && <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />}
 <slot name="head" />
 </head>
 <body class={bodyClass}>
-<Header ctaText={ctaText} ctaHref={ctaHref} />
+<a href="#main" class="skip-link">Skip to main content</a>
+<Header ctaText={ctaText} ctaHref={ctaHref} path={path} />
+<main id="main">
 <slot />
+</main>
 <Footer />
 <script src={base + '/flow.js'} defer></script>
 </body>
