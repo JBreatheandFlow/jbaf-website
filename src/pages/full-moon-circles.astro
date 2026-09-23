@@ -1,6 +1,46 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const siteUrl = 'https://jessbreatheandflow.com';
+const circleDates = [
+  { label: 'October 24, 2026', start: '2026-10-24T19:00:00-04:00', end: '2026-10-24T21:00:00-04:00', url: 'https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-october-24' },
+  { label: 'November 28, 2026', start: '2026-11-28T19:00:00-05:00', end: '2026-11-28T21:00:00-05:00', url: 'https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-november-28' },
+  { label: 'December 26, 2026', start: '2026-12-26T19:00:00-05:00', end: '2026-12-26T21:00:00-05:00', url: 'https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-december-26' },
+];
+
+const eventSchema = {
+  '@context': 'https://schema.org',
+  '@graph': circleDates.map((d) => ({
+    '@type': 'Event',
+    name: 'Full Moon Healing Circle, ' + d.label,
+    description:
+      'A circle held under the full moon for release, reflection, and community connection. Includes guided reflection, journaling, optional sharing, and a restorative sound bath.',
+    startDate: d.start,
+    endDate: d.end,
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    image: siteUrl + '/images/full-moon-meditation.jpg',
+    url: siteUrl + '/full-moon-circles',
+    location: {
+      '@type': 'Place',
+      name: 'Milton, Massachusetts',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Milton',
+        addressRegion: 'MA',
+        addressCountry: 'US',
+      },
+    },
+    organizer: { '@id': siteUrl + '/#organization' },
+    performer: { '@id': siteUrl + '/#jessica' },
+    offers: [
+      { '@type': 'Offer', name: 'Sliding Scale', price: '11', priceCurrency: 'USD', url: d.url, availability: 'https://schema.org/InStock', validFrom: '2026-09-22' },
+      { '@type': 'Offer', name: 'General Admission', price: '33', priceCurrency: 'USD', url: d.url, availability: 'https://schema.org/InStock', validFrom: '2026-09-22' },
+      { '@type': 'Offer', name: 'Pay It Forward', price: '44', priceCurrency: 'USD', url: d.url, availability: 'https://schema.org/InStock', validFrom: '2026-09-22' },
+    ],
+  })),
+};
 ---
 <BaseLayout
   title="Full Moon Circles | Jess Breathe & Flow"
@@ -8,6 +48,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   path="/full-moon-circles"
   ctaText="Find Your Space"
   ctaHref="#dates"
+  image="/images/full-moon-meditation.jpg"
+  schema={eventSchema}
 >
 <section class="hero-split-full">
   <div class="hero-text">
@@ -16,7 +58,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <p class="hero-tagline">Held once a month, sometimes twice when a blue moon calls for it.</p>
   </div>
   <div class="hero-image">
-    <img src={base + "/images/full-moon-photo.jpg"} alt="Jessica smiling in an orange outfit, seated on stone steps surrounded by flowers" loading="lazy">
+    <img src={base + "/images/full-moon-photo.jpg"} alt="Jessica smiling in an orange outfit, seated on stone steps surrounded by flowers" width="1200" height="1600" fetchpriority="high">
   </div>
 </section>
 
