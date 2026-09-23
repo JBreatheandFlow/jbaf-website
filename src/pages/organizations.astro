@@ -11,6 +11,42 @@ const formats = [
   { name: 'Hybrid cohort', what: '8 to 12 weeks of live sessions, practice between sessions, and peer pods for lasting change.', price: '$5,000' },
   { name: 'Executive advisory', what: '3 to 6 months of leadership coaching and culture strategy for executive teams.', price: '$15,000' },
 ];
+
+const siteUrl = 'https://jessbreatheandflow.com';
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': siteUrl + '/organizations#service',
+  name: 'Trauma-Informed Workshops and Leadership Programs for Organizations',
+  serviceType: 'Workplace wellbeing and culture facilitation',
+  description:
+    'Trauma-informed workshops, team healing circles, immersions, hybrid cohorts, and executive advisory that help teams build real trust and sustain the work together.',
+  url: siteUrl + '/organizations',
+  provider: { '@id': siteUrl + '/#organization' },
+  areaServed: ['Greater Boston', 'United States', 'International'],
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Schools, nonprofits, companies, city and community programs, leadership teams',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Organizational engagement formats',
+    itemListElement: formats.map((f) => ({
+      '@type': 'Offer',
+      name: f.name,
+      description: f.what,
+      priceCurrency: 'USD',
+      price: f.price.replace(/[$,]/g, ''),
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        price: f.price.replace(/[$,]/g, ''),
+        valueAddedTaxIncluded: false,
+      },
+availability: 'https://schema.org/InStock',
+    })),
+  },
+};
 ---
 <BaseLayout
   title="For Organizations | Jess Breathe & Flow"
@@ -18,6 +54,8 @@ const formats = [
   path="/organizations"
   ctaText="Request a Consultation"
   ctaHref={consult}
+  image="/images/org-workshop-1.jpg"
+  schema={serviceSchema}
 >
 <style>
   .wrap.center > p { margin-left: auto; margin-right: auto; }
@@ -165,7 +203,7 @@ const formats = [
       <p class="credentials-line">MS, Organization Development, Pepperdine | Trauma-Informed Practice | 500-Hour Advanced-Trained Yoga Teacher | GPS Trained Facilitator</p>
       <p class="research-note">Jessica's research shapes how these programs are designed. It did not evaluate JBAF programs.</p>
     </div>
-    <div class="split-media"><img src={base + "/images/org-trauma-informed-learning.jpg"} alt="Jessica facilitating a leadership workshop circle discussion" loading="lazy"></div>
+    <div class="split-media"><img src={base + "/images/org-trauma-informed-learning.jpg"} alt="Jessica facilitating a leadership workshop circle discussion" loading="lazy" width="1200" height="900"></div>
   </div>
 </section>
 
@@ -243,7 +281,7 @@ const formats = [
       <h4>What we delivered</h4>
       <p>Chair yoga, breathwork, mobility, strength building, and meditation, in 4-week series of 1-hour sessions. Every class offers options for each movement, invites breaks, and asks people to say when something doesn't feel right, so participants build awareness of their own bodies as they move.</p>
       <h4>What happened</h4>
-      <p>Since January 2026, Jessica has taught 27 sessions at the Veronica B. Smith Senior Center, regularly with 22 or more participants. Many return week after week, and attendance rises when participants learn she's teaching. In fall 2026, the work expanded to three new series in Copley, Holland, and Jamaica Plain.</p>
+      <p>Since January 2026, Jessica has led 27 completed sessions at the Veronica B. Smith Senior Center, drawing 25 to 32 participants per class, roughly 675 to 864 participant visits in all. Many return week after week, and attendance rises when participants learn she's teaching. In fall 2026, the work expanded to three new series in Copley, Holland, and Jamaica Plain.</p>
       <blockquote>"I have had trouble sleeping for a very long time. Since taking your classes, I am able to relax and sleep at night."</blockquote>
       <p style="font-size: 0.9rem;">Participant, Veronica B. Smith Senior Center</p>
     </div>
