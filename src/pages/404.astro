@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout
+  title="Page Not Found | Jess Breathe & Flow"
+  description="That page has moved or no longer exists. Here's where to find what you were looking for."
+  path="/404"
+  noindex={true}
+>
+<section class="hero">
+  <div class="wrap center mx-auto" style="max-width: 680px;">
+    <p class="eyebrow">404</p>
+    <h1>This page has <span class="annotate annotate-underline">moved on<svg viewBox="0 0 190 20" preserveAspectRatio="none"><path d="M4 11 Q 47 3, 95 10 T 186 9"/></svg></span>.</h1>
+    <p class="subhead mx-auto">We recently moved to a new home on the web, so a few older links no longer lead anywhere. Nothing is lost, it's all just a little further down the page.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap center mx-auto" style="max-width: 720px;">
+    <p class="eyebrow">Where would you like to go?</p>
+    <h2>Start here</h2>
+  </div>
+  <div class="wrap">
+    <div class="col-grid-4">
+      <div class="reveal">
+        <h3><a href={base + "/experiences"}>Experiences</a></h3>
+        <p>Yoga, sound healing, circles, and everything you can book.</p>
+      </div>
+      <div class="reveal">
+        <h3><a href={base + "/full-moon-circles"}>Full Moon Circles</a></h3>
+        <p>Upcoming dates and tickets for the monthly healing circle.</p>
+      </div>
+      <div class="reveal">
+        <h3><a href={base + "/organizations"}>For Organizations</a></h3>
+        <p>Workshops, series, and advisory work for teams and schools.</p>
+      </div>
+      <div class="reveal">
+        <h3><a href={base + "/contact"}>Contact</a></h3>
+        <p>Reach Jessica directly about anything not listed here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tint-mist">
+  <div class="wrap center">
+    <h2 style="color: var(--ivory);">Enter as you. Emerge as your Self.</h2>
+    <p class="mx-auto" style="color: var(--ivory);">Head back to the beginning and find the experience that meets you where you are.</p>
+    <a href={base + "/"} class="btn btn-secondary" style="border-color: var(--ivory); color: var(--ivory);">Back to Home</a>
+  </div>
+</section>
+</BaseLayout>
