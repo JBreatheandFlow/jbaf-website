@@ -1,11 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Answers below are copied verbatim from the visible page content.
+const faqs = [
+  ['What should I bring?', "Please bring a journal and something to write with. You're also welcome to bring a friend, a blanket, or any personal items that help you feel grounded and comfortable."],
+  ['Can children attend?', 'Yes, youth ages 10 to 17 are welcome when accompanied by an adult. Please use discretion to ensure they can engage in a reflective, group setting.'],
+  ["What if I don't feel comfortable sharing?", "That's completely okay. Sharing is always optional. You are invited to participate in whatever way feels safe and supportive for you."],
+  ['Do I need any prior experience with meditation or healing circles?', "Not at all. This space is beginner-friendly and accessible to all. You'll be gently guided every step of the way."],
+  ['What can I expect during the circle?', 'This experience includes guided reflection, journaling, optional sharing, and a restorative sound bath to support release and integration.'],
+  ['Is this a religious experience?', 'No. This is a spiritual and reflective space that welcomes people of all backgrounds, beliefs, and identities.'],
+  ['What is your cancellation and refund policy?', "Tickets are non-refundable, but they may be transferred to a future circle if you're unable to attend."],
+  ["What if I can't afford the ticket right now?", "We offer sliding scale and Pay-It-Forward tickets to support accessibility, healing should be accessible, not a luxury. If a price point better supports you in being present, we welcome you fully. Reach out and we'll work with you."],
+  ['What level of yoga experience do I need?', "None. Every class, from Poolside Yoga to Private Sessions, is taught with modifications for all levels. If you've never rolled out a mat before, you belong here just as much as someone who has practiced for years."],
+  ['I have an injury or physical limitation. Can I still practice?', 'Yes. Let Jessica know before class so poses can be modified to fit your body safely.'],
+  ['How do I book an organizational workshop or consultation?', "Visit the For Organizations page and use Request a Consultation. Jessica will follow up directly to scope the engagement to your team's needs."],
+  ['Do I need an account to book?', 'No. Booking is handled through a simple online scheduler, no account or app required.'],
+  ['Can I book for a group or private event?', 'Yes. Reach out directly at info@jessbreatheandflow.com to arrange a private circle, workshop, or group session.'],
+  ['Where does the Xhale retreat actually take place?', "We'll gather first in Bali, and travel together from there to Gili Air for the retreat itself at Samata Village. Traveling as a group is part of the experience, the retreat begins the moment we meet, not just when we arrive."],
+  ['Is registration open for the Xhale retreat?', "Not yet. Join the waitlist and you'll be the first to know the moment spots are released."],
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': 'https://jessbreatheandflow.com/faqs#faq',
+  mainEntity: faqs.map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
 ---
 <BaseLayout
   title="FAQs | Jess Breathe & Flow"
   description="Frequently asked questions about healing circles, yoga, booking, and the Xhale retreat with Jess Breathe and Flow."
   path="/faqs"
+  schema={faqSchema}
 >
 <section class="hero">
   <div class="wrap center mx-auto" style="max-width: 720px;">
