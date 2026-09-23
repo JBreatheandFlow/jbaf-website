@@ -8,9 +8,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   path="/xhale-retreat"
   ctaText="Join the Waitlist"
   ctaHref="https://form.typeform.com/to/qpcWBnwb"
+  image="/images/xhale-hero-aerial.jpg"
 >
 <section class="hero-fullbleed">
-  <img src={base + "/images/xhale-hero-aerial.jpg"} alt="Aerial view of the Xhale retreat pool and grounds in Gili Air, Indonesia" loading="lazy">
+  <img src={base + "/images/xhale-hero-aerial.jpg"} alt="Aerial view of the Xhale retreat pool and grounds in Gili Air, Indonesia" fetchpriority="high" decoding="async" width="1800" height="1013">
   <div class="hero-content">
     <p class="eyebrow">Jess Breathe & Flow presents</p>
     <h1>Xhale</h1>
@@ -35,12 +36,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <p class="eyebrow" style="text-align: center;">Samata Village</p>
     <h2 style="text-align: center; margin-bottom: 40px;">A look at where we'll gather</h2>
     <div class="gallery-grid">
-      <div class="split-media"><img src={base + "/images/xhale-gallery-1.jpg"} alt="The retreat pool at dusk" loading="lazy"></div>
-      <div class="split-media"><img src={base + "/images/xhale-gallery-2.jpg"} alt="Poolside loungers surrounded by tropical gardens" loading="lazy"></div>
-      <div class="split-media"><img src={base + "/images/xhale-gallery-3.jpg"} alt="Red umbrellas along the pool deck" loading="lazy"></div>
-      <div class="split-media"><img src={base + "/images/xhale-gallery-4.jpg"} alt="View of the retreat grounds at sunset" loading="lazy"></div>
-      <div class="split-media"><img src={base + "/images/xhale-gallery-5.jpg"} alt="The pool surrounded by palm trees and thatched roofs" loading="lazy"></div>
-      <div class="split-media"><img src={base + "/images/xhale-gallery-6.jpg"} alt="Aerial view of Samata Village and its pool" loading="lazy"></div>
+      <div class="split-media"><img src={base + "/images/xhale-gallery-1.jpg"} alt="The retreat pool at dusk" loading="lazy" width="1200" height="799"></div>
+      <div class="split-media"><img src={base + "/images/xhale-gallery-2.jpg"} alt="Poolside loungers surrounded by tropical gardens" loading="lazy" width="1200" height="800"></div>
+      <div class="split-media"><img src={base + "/images/xhale-gallery-3.jpg"} alt="Red umbrellas along the pool deck" loading="lazy" width="1200" height="800"></div>
+      <div class="split-media"><img src={base + "/images/xhale-gallery-4.jpg"} alt="View of the retreat grounds at sunset" loading="lazy" width="1000" height="666"></div>
+      <div class="split-media"><img src={base + "/images/xhale-gallery-5.jpg"} alt="The pool surrounded by palm trees and thatched roofs" loading="lazy" width="1000" height="1000"></div>
+      <div class="split-media"><img src={base + "/images/xhale-gallery-6.jpg"} alt="Aerial view of Samata Village and its pool" loading="lazy" width="1200" height="675"></div>
     </div>
   </div>
 </section>
