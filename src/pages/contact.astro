@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const consult = 'https://cal.com/jessica-metayer-1kh8sr/organizational-consultation';
+const coachingForm = 'https://forms.gle/jovmvUPjLiqpKS5c9';
+---
+<BaseLayout
+  title="Contact | Jess Breathe & Flow"
+  description="Reach Jess Breathe and Flow about a workshop, a partnership, an interview, a speaking request, or a question about an upcoming experience."
+  path="/contact"
+  ctaText="Book a Consultation"
+  ctaHref={consult}
+>
+<section class="hero">
+  <div class="wrap center mx-auto" style="max-width: 700px;">
+    <p class="eyebrow">Contact</p>
+    <h1>Let's start a <span class="annotate annotate-underline">conversation<svg viewBox="0 0 230 20" preserveAspectRatio="none"><path d="M4 11 Q 57 3, 115 10 T 226 9"/></svg></span>.</h1>
+    <p class="subhead mx-auto">Whether you're bringing this work to your team, planning something together, or just have a question before you book, there's a door here for you.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="col-grid-4">
+      <div class="reveal">
+        <h3>General questions</h3>
+        <p>Questions about a class, a circle, a booking, or anything you read here. The <a href={base + "/faqs"}>FAQs</a> answer most of them already.</p>
+        <p><a href="mailto:info@jessbreatheandflow.com?subject=General%20question">info@jessbreatheandflow.com</a></p>
+      </div>
+      <div class="reveal">
+        <h3>Organizations &amp; schools</h3>
+        <p>Workshops, series, immersions, and advisory work for teams, schools, nonprofits, and city programs. Booking a call is the fastest route.</p>
+        <p><a href={consult} target="_blank" rel="noopener">Book a free 30-minute consultation</a></p>
+        <p><a href="mailto:info@jessbreatheandflow.com?subject=Organizational%20inquiry">info@jessbreatheandflow.com</a></p>
+      </div>
+      <div class="reveal">
+        <h3>Media &amp; speaking</h3>
+        <p>Interviews, panels, keynotes, and podcast conversations on healing-centered leadership, culturally rooted wellness, and the research behind it.</p>
+        <p><a href="mailto:info@jessbreatheandflow.com?subject=Media%20or%20speaking%20request">info@jessbreatheandflow.com</a></p>
+      </div>
+      <div class="reveal">
+        <h3>Collaboration</h3>
+        <p>Partnerships, co-hosted events, retreat collaborations, sponsorships, and practitioners who want to work alongside JBAF.</p>
+        <p><a href="mailto:info@jessbreatheandflow.com?subject=Collaboration">info@jessbreatheandflow.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tint-inner-light">
+  <div class="wrap center mx-auto" style="max-width: 680px;">
+    <p class="eyebrow">What to expect</p>
+    <h2>A real reply, from Jessica</h2>
+    <p class="subhead mx-auto">Every message comes to Jessica directly. Most get a response within two business days. If your timeline is tight, say so in the subject line and it moves to the top.</p>
+    <p class="mx-auto" style="max-width: 560px;">Jess Breathe &amp; Flow is based in Milton, Massachusetts, and works with organizations across Greater Boston, nationally, and internationally.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap center mx-auto" style="max-width: 720px;">
+    <p class="eyebrow">Already know what you need?</p>
+    <h2>Skip the email</h2>
+    <div class="center-actions">
+      <a href={consult} target="_blank" rel="noopener" class="btn btn-primary">Book an Organizational Consultation</a>
+      <a href={base + "/full-moon-circles"} class="btn btn-secondary">Reserve a Circle Seat</a>
+      <a href={coachingForm} target="_blank" rel="noopener" class="btn btn-secondary">Apply for Coaching</a>
+    </div>
+  </div>
+</section>
+</BaseLayout>
