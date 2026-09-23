@@ -1188,3 +1188,56 @@ p { margin: 0 0 20px; max-width: 62ch; }
 @media (max-width: 860px) {
   .doors { grid-template-columns: 1fr; }
 }
+
+/* ---------------------------------------------------------------
+   Accessibility: skip link and visible keyboard focus
+   --------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 200;
+  background: var(--clay, #A36F35);
+  color: var(--ivory, #FFFDEA);
+  padding: 12px 20px;
+  border-radius: 0 0 6px 6px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--clay, #A36F35);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.tint-mist :focus-visible,
+.curved-section :focus-visible,
+.hero-fullbleed :focus-visible {
+  outline-color: var(--ivory, #FFFDEA);
+}
+
+.main-nav a[aria-current="page"] {
+  color: var(--clay, #A36F35);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.main-nav a.nav-cta[aria-current="page"] {
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------
+   Newsletter signup section
+   --------------------------------------------------------------- */
+.newsletter-section {
+  background: var(--inner-light, #EFE7D8);
+}
+.newsletter-fallback {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-align: center;
+  margin-top: 18px;
+}
