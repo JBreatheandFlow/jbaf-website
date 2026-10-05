@@ -80,6 +80,9 @@ availability: 'https://schema.org/InStock',
   .case-study h4 { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--clay, #A36F35); margin: 20px 0 6px; }
   .case-study blockquote { font-family: var(--font-display); font-size: 1.15rem; border-left: 3px solid var(--clay, #A36F35); padding-left: 18px; margin: 24px 0 6px; }
   .research-note { font-size: 0.82rem; opacity: 0.8; margin-top: 12px; }
+  .insurance-note { margin-top: 30px; }
+  .insurance-note img { width: 225px; height: auto; margin: 0 auto; background: #ffffff; padding: 12px 16px; border-radius: 6px; }
+  .insurance-note p { font-size: 0.86rem; max-width: 520px; margin: 14px auto 0; opacity: 0.9; }
   .stakes-list { list-style: none; padding: 0; max-width: 720px; margin: 28px auto 0; text-align: left; }
   .stakes-list li { padding: 14px 0 14px 28px; border-bottom: 1px solid rgba(255,253,234,0.2); position: relative; }
   .stakes-list li::before { content: ''; position: absolute; left: 4px; top: 24px; width: 8px; height: 8px; border-radius: 50%; background: var(--clay, #A36F35); }
@@ -243,7 +246,12 @@ availability: 'https://schema.org/InStock',
       <li>Jessica leads personally, every time</li>
       <li>Trauma-informed, with participation always by choice</li>
       <li>Designed for lasting change, not a one-time event</li>
+      <li>Fully insured, with a certificate of insurance available on request</li>
     </ul>
+    <div class="insurance-note">
+      <img src={base + "/images/alternative-balance-badge.png"} alt="Alternative Balance Verified Member" width="500" height="200">
+      <p>Jess Breathe &amp; Flow carries liability insurance. A certificate of insurance is available on request.</p>
+    </div>
   </div>
 </section>
 
