@@ -4,7 +4,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <BaseLayout
   title="Xhale Retreat | Jess Breathe & Flow"
-  description="Xhale, a Jess Breathe and Flow retreat. May 1 to 8, 2027 at Samata Village, Gili Air, Indonesia."
+  description="Xhale, a Jess Breathe and Flow retreat. June 16 to 23, 2027 at Gili Air Lagoon Resort, Gili Air, Indonesia."
   path="/xhale-retreat"
   ctaText="Join the Waitlist"
   ctaHref="https://form.typeform.com/to/qpcWBnwb"
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <p class="eyebrow">Jess Breathe & Flow presents</p>
     <h1>Xhale</h1>
     <p class="retreat-meta" style="font-family: var(--font-display); font-style: italic; font-size: 1.3rem; margin-bottom: 8px;">Come home to yourself.</p>
-    <p class="retreat-meta">Samata Village, Gili Air, Indonesia<br>A 7-day wellness retreat &middot; May 1 &ndash; 8, 2027</p>
+    <p class="retreat-meta">Gili Air Lagoon Resort, Gili Air, Indonesia<br>A 7-night wellness retreat &middot; June 16 &ndash; 23, 2027</p>
     <a href="https://form.typeform.com/to/qpcWBnwb" class="btn btn-primary">Join the Waitlist</a>
     <p style="color: var(--ivory); opacity: 0.85; font-size: 0.85rem; margin-top: 14px;">Registration opens soon.</p>
   </div>
@@ -26,14 +26,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <div class="wrap center mx-auto" style="max-width: 680px;">
     <p class="eyebrow">A week to finally exhale</p>
     <h2>Come as you are. Leave lighter.</h2>
-    <p class="subhead mx-auto">Seven days of yoga, sound healing, and community at Samata Village on the quiet island of Gili Air, no cars, no rush, just the ocean, the practice, and space to set some of it down. Registration hasn't opened yet. Join the waitlist and be the first to know the moment spots are released.</p>
+    <p class="subhead mx-auto">Seven nights of yoga, sound healing, and community at Gili Air Lagoon Resort on the quiet island of Gili Air, no cars, no rush, just the ocean, the practice, and space to set some of it down. Registration hasn't opened yet. Join the waitlist and be the first to know the moment spots are released.</p>
     <a href="https://form.typeform.com/to/qpcWBnwb" class="btn btn-secondary">Join the Waitlist</a>
   </div>
 </section>
 
 <section class="section-tight tint-inner-light" id="gallery">
   <div class="wrap">
-    <p class="eyebrow" style="text-align: center;">Samata Village</p>
+    <p class="eyebrow" style="text-align: center;">Gili Air Lagoon Resort</p>
     <h2 style="text-align: center; margin-bottom: 40px;">A look at where we'll gather</h2>
     <div class="gallery-grid">
       <div class="split-media"><img src={base + "/images/xhale-gallery-1.jpg"} alt="The retreat pool at dusk" loading="lazy" width="1200" height="799"></div>
@@ -41,8 +41,40 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <div class="split-media"><img src={base + "/images/xhale-gallery-3.jpg"} alt="Red umbrellas along the pool deck" loading="lazy" width="1200" height="800"></div>
       <div class="split-media"><img src={base + "/images/xhale-gallery-4.jpg"} alt="View of the retreat grounds at sunset" loading="lazy" width="1000" height="666"></div>
       <div class="split-media"><img src={base + "/images/xhale-gallery-5.jpg"} alt="The pool surrounded by palm trees and thatched roofs" loading="lazy" width="1000" height="1000"></div>
-      <div class="split-media"><img src={base + "/images/xhale-gallery-6.jpg"} alt="Aerial view of Samata Village and its pool" loading="lazy" width="1200" height="675"></div>
+      <div class="split-media"><img src={base + "/images/xhale-gallery-6.jpg"} alt="Aerial view of the retreat grounds and pool" loading="lazy" width="1200" height="675"></div>
     </div>
   </div>
 </section>
+
+<section class="section-tight" id="testimonials">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align: center;">From our circles and sessions</p>
+    <h2 style="text-align: center; margin-bottom: 8px;">In their words</h2>
+    <div class="testimonial-grid quote-grid-2">
+      <div class="testimonial-card reveal">
+        <p class="quote">"Jess creates spaces that feel like a warm hug. I leave every circle feeling full. It's a safe space for healing, connecting, and sharing."</p>
+        <p class="source">&mdash; Daisy</p>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="quote">"A space where you can arrive not knowing anyone and still feel completely comfortable, welcomed, and safe. You return to your life with greater clarity and renewed energy."</p>
+        <p class="source">&mdash; ShaniiTae</p>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="quote">"This is exactly what was needed. To recharge and get back to myself. Jess Breathe and Flow is where you need to be to feel whole again."</p>
+        <p class="source">&mdash; Jackie R.</p>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="quote">"There are certain people who simply embody the work they were created to do, and Jessica is one of them. A sanctuary of peace, presence, and intentional healing."</p>
+        <p class="source">&mdash; N.N.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .quote-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 860px) {
+    .quote-grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
 </BaseLayout>
