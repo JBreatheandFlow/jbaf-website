@@ -4,8 +4,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const siteUrl = 'https://jessbreatheandflow.com';
 const circleDates = [
-  { label: 'November 28, 2026', start: '2026-11-28T18:00:00-05:00', end: '2026-11-28T20:00:00-05:00', url: 'https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-november-28' },
-  { label: 'December 26, 2026', start: '2026-12-26T18:00:00-05:00', end: '2026-12-26T20:00:00-05:00', url: 'https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-december-26' },
+  { label: 'November 28, 2026', start: '2026-11-28T18:00:00-05:00', end: '2026-11-28T20:00:00-05:00', sliding: 'https://book.stripe.com/4gM3cugOy5BpfmT9r3cMM04', general: 'https://book.stripe.com/bJe3cu41M2pd7UreLncMM02', payForward: 'https://book.stripe.com/00wdR841M9RFb6D5aNcMM03' },
+  { label: 'December 26, 2026', start: '2026-12-26T18:00:00-05:00', end: '2026-12-26T20:00:00-05:00', sliding: 'https://book.stripe.com/7sY7sKcyi6FtfmTcDfcMM07', general: 'https://book.stripe.com/aFaeVcaqa0h57UrbzbcMM05', payForward: 'https://book.stripe.com/6oU5kCbue2pd1w31YBcMM06' },
 ];
 
 const eventSchema = {
@@ -36,9 +36,9 @@ const eventSchema = {
     organizer: { '@id': siteUrl + '/#organization' },
     performer: { '@id': siteUrl + '/#jessica' },
     offers: [
-      { '@type': 'Offer', name: 'Sliding Scale', price: '11', priceCurrency: 'USD', url: d.url, availability: 'https://schema.org/InStock', validFrom: '2026-09-22' },
-      { '@type': 'Offer', name: 'General Admission', price: '33', priceCurrency: 'USD', url: d.url, availability: 'https://schema.org/InStock', validFrom: '2026-09-22' },
-      { '@type': 'Offer', name: 'Pay It Forward', price: '44', priceCurrency: 'USD', url: d.url, availability: 'https://schema.org/InStock', validFrom: '2026-09-22' },
+      { '@type': 'Offer', name: 'Sliding Scale', price: '11.11', priceCurrency: 'USD', url: d.sliding, availability: 'https://schema.org/InStock', validFrom: '2026-09-22' },
+      { '@type': 'Offer', name: 'General Admission', price: '33.33', priceCurrency: 'USD', url: d.general, availability: 'https://schema.org/InStock', validFrom: '2026-09-22' },
+      { '@type': 'Offer', name: 'Pay It Forward', price: '44.44', priceCurrency: 'USD', url: d.payForward, availability: 'https://schema.org/InStock', validFrom: '2026-09-22' },
     ],
   })),
 };
@@ -103,16 +103,16 @@ const eventSchema = {
       <div class="stat-card big-number" id="november-28">
         <p class="big-num-label" style="color: var(--clay);">November 28</p>
         <p style="color: var(--deep-blue); margin: 8px 0 16px;">6:00 to 8:00 PM &middot; Norwood, MA</p>
-        <a href="https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-november-28-sliding-scale?date=2026-11-28&amp;month=2026-11" class="btn btn-secondary" style="margin-bottom:8px;">Sliding Scale &mdash; $11</a>
-        <a href="https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-november-28?date=2026-11-28&amp;month=2026-11" class="btn btn-primary" style="margin-bottom:8px;">General Admission &mdash; $33</a>
-        <a href="https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-november-28-pay-it-forward?date=2026-11-28&amp;month=2026-11" class="btn btn-secondary">Pay It Forward &mdash; $44</a>
+        <a href="https://book.stripe.com/4gM3cugOy5BpfmT9r3cMM04" class="btn btn-secondary" style="margin-bottom:8px;">Sliding Scale &mdash; $11</a>
+        <a href="https://book.stripe.com/bJe3cu41M2pd7UreLncMM02" class="btn btn-primary" style="margin-bottom:8px;">General Admission &mdash; $33</a>
+        <a href="https://book.stripe.com/00wdR841M9RFb6D5aNcMM03" class="btn btn-secondary">Pay It Forward &mdash; $44</a>
       </div>
       <div class="stat-card big-number" id="december-26">
         <p class="big-num-label" style="color: var(--clay);">December 26</p>
         <p style="color: var(--deep-blue); margin: 8px 0 16px;">6:00 to 8:00 PM &middot; Norwood, MA</p>
-        <a href="https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-december-26-sliding-scale?date=2026-12-26&amp;month=2026-12" class="btn btn-secondary" style="margin-bottom:8px;">Sliding Scale &mdash; $11</a>
-        <a href="https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-december-26?date=2026-12-26&amp;month=2026-12" class="btn btn-primary" style="margin-bottom:8px;">General Admission &mdash; $33</a>
-        <a href="https://cal.com/jessica-metayer-1kh8sr/full-moon-circle-december-26-pay-it-forward-ticket?date=2026-12-26&amp;month=2026-12" class="btn btn-secondary">Pay It Forward &mdash; $44</a>
+        <a href="https://book.stripe.com/7sY7sKcyi6FtfmTcDfcMM07" class="btn btn-secondary" style="margin-bottom:8px;">Sliding Scale &mdash; $11</a>
+        <a href="https://book.stripe.com/aFaeVcaqa0h57UrbzbcMM05" class="btn btn-primary" style="margin-bottom:8px;">General Admission &mdash; $33</a>
+        <a href="https://book.stripe.com/6oU5kCbue2pd1w31YBcMM06" class="btn btn-secondary">Pay It Forward &mdash; $44</a>
       </div>
     </div>
   </div>
