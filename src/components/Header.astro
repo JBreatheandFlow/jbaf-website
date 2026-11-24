@@ -15,7 +15,7 @@ const current = (p) => (path === p ? 'page' : undefined);
         <li><a href={href('/experiences')} aria-current={current('/experiences')}>Experiences</a></li>
         <li><a href={href('/organizations')} aria-current={current('/organizations')}>For Organizations</a></li>
         <li><a href={href('/community')} aria-current={current('/community')}>Community</a></li>
-        <li><a href={href('/xhale-retreat')} aria-current={current('/xhale-retreat')}>Xhale Retreat</a></li>
+        <li><a href="https://xhaleretreat.com" target="_blank" rel="noopener">Xhale Retreat</a></li>
         <li><a href={href('/coaching')} aria-current={current('/coaching')}>Coaching</a></li>
         <li><a href={href('/about')} aria-current={current('/about')}>About</a></li>
         <li><a href={href(ctaHref)} class="nav-cta" target={ctaHref.startsWith("http") ? "_blank" : undefined} rel={ctaHref.startsWith("http") ? "noopener" : undefined}>{ctaText}</a></li>
